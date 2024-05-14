@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html th:lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<!-- Define document type, language, and replace content with base layout -->
+
+<head>
+    <!-- Head section contains metadata about the document -->
+    <meta charset="UTF-8">
+    <!-- Character encoding -->
+    <title>Cab-Booking-Log-in</title>
+    <!-- Title of the document -->
+</head>
+
+<body>
+    <!-- Body section contains visible content of the document -->
+    <section>
+        <!-- Main section of the document -->
+
+        <div class="container p-5">
+            <!-- Container for content with padding -->
+
+            <div class="row">
+                <!-- Bootstrap row -->
+
+                <div class="col-md-6 offset-md-3">
+                    <!-- Bootstrap column with medium width and offset -->
+
+                    <div class="card">
+                        <!-- Bootstrap card -->
+
+                        <div class="card-header text-center fs-4">
+                            Login Page
+                            <!-- Header for login page -->
+                        </div>
+
+                        <div class="card-body">
+                            <!-- Card body -->
+
+                            <h4 class="text-center f-5 p-3" th:text="${error}" style="color:red;"></h4>
+                            <!-- Error message displayed if there is any -->
+
+                            <form th:action="@{/postlogin}" method="post">
+                                <!-- Form for user login -->
+                                <!-- Action attribute specifies where to submit the form data -->
+                                <!-- Method attribute specifies the HTTP method to use -->
+
+                                <div class="mb-3">
+                                    <!-- Form group for email -->
+                                    <label>Enter Email</label>
+                                    <!-- Label for email input -->
+                                    <input type="email" name="email" class="form-control" required>
+                                    <!-- Input field for email -->
+                                </div>
+
+                                <div class="mb-3">
+                                    <!-- Form group for password -->
+                                    <label>Enter Password</label>
+                                    <!-- Label for password input -->
+                                    <input type="password" name="password" class="form-control" required>
+                                    <!-- Input field for password -->
+                                </div>
+
+                                <button class="btn btn-primary col-md-12">Login</button>
+                                <!-- Button to submit login form -->
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

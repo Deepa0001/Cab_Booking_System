@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html th:lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::Layout(~{::section})">
+<!-- Define document type, language, and replace content with base layout -->
+
+<head>
+    <!-- Head section contains metadata about the document -->
+    <meta charset="ISO-8859-1">
+    <!-- Character encoding -->
+    <title>Add Car</title>
+    <!-- Title of the document -->
+</head>
+
+<body>
+    <!-- Body section contains visible content of the document -->
+    <section>
+        <!-- Main section of the document -->
+
+        <div class="container">
+            <!-- Container for content -->
+
+            <h3>Add a new Car</h3>
+            <!-- Heading for adding a new car -->
+
+            <form th:action="@{/admin/addcar}" method="post" th:object="${car}" enctype="multipart/form-data">
+                <!-- Form for adding a new car -->
+                <!-- Action attribute specifies where to submit the form data -->
+                <!-- Method attribute specifies the HTTP method to use -->
+                <!-- enctype attribute specifies how form data should be encoded when submitting it to the server -->
+
+                <div class="container">
+                    <!-- Nested container -->
+
+                    <div class="row">
+                        <!-- Bootstrap row -->
+
+                        <label>Car Name</label>
+                        <!-- Label for car name input -->
+                        <input type="text" class="form-control" required name="Model_Name" id="Model_Name" placeholder="Car Name">
+                        <!-- Input field for car name -->
+                    </div>
+                    <br>
+                    <!-- Line break -->
+
+                    <div class="row">
+                        <!-- Bootstrap row -->
+
+                        <label>Price Per Km</label>
+                        <!-- Label for price per km input -->
+                        <input type="text" class="form-control" required name="Price_Per_Km" id="Price_Per_Km" placeholder="Price">
+                        <!-- Input field for price per km -->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
